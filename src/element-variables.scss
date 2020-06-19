@@ -1,0 +1,12 @@
+/* 文档：https://element.eleme.cn/2.13/#/zh-CN/component/custom-theme */
+/* 改变主题色变量 */
+$--color-primary: #008CBA;
+$--color-Success: #4CAF50;
+$--color-Warning: #EDA231;
+$--color-Danger: #F44336;
+$--color-Info: #7D7A7A;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";

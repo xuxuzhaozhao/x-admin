@@ -1,0 +1,37 @@
+/* 定义一些基本样式，比如elementui我不喜欢原生的message弹出框样式，显得太透明，不清晰。 */
+
+.el-message__content {
+    color: #ffffff !important;
+}
+
+.el-message--success {
+    background-color: #67c23a !important;
+}
+
+.el-message .el-icon-success {
+    color: #dbefdc !important
+}
+
+.el-message--warning {
+    background-color: #EDA231 !important;
+}
+
+.el-message .el-icon-warning {
+    color: #dbefdc !important
+}
+
+.el-message--error {
+    background-color: #F44336 !important;
+}
+
+.el-message .el-icon-error {
+    color: #dbefdc !important
+}
+
+.el-message--info {
+    background-color: #008CBA !important;
+}
+
+.el-message .el-icon-info {
+    color: #dbefdc !important
+}
