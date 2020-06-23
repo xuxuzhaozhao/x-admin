@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Test from "./Test";
+import Test from "@/views/About/src/Test";
 export default {
   components: {
     Test
