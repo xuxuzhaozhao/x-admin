@@ -25,7 +25,7 @@
           :default-active="leftIndex"
           @select="leftSelect"
           unique-opened
-          :class="{ layoutMenu: true, isCollapse: isCollapse }"
+          :class="{ MainLayout: true, isCollapse: isCollapse }"
         >
           <template v-if="menuData[topIndex] && menuData[topIndex].children">
             <left-menu
@@ -62,7 +62,7 @@
                 }
               "
               unique-opened
-              class="layoutMenu"
+              class="MainLayout"
             >
               <left-menu v-for="(model, index) in menuData" :key="index" :model="model"></left-menu>
             </el-menu>
@@ -135,7 +135,7 @@
               style="height: 24px;margin-left: 5px;float: left;margin-top: 4px;"
               alt="logo"
             />
-          </span> -->
+          </span>-->
         </div>
       </div>
       <el-scrollbar
@@ -157,9 +157,9 @@
             © 2005 - {{ new Date().getFullYear() }} &nbsp;
             <a
               style="color:inherit"
-              href="https://www.menerp.com"
+              href="https://www.weishan.pro"
               target="_blank"
-            >微山软件 - 可靠且值得信赖的合作伙伴</a>
+            >微山软件 - 值得您信赖的合作伙伴</a>
           </div>
         </div>
       </el-scrollbar>
@@ -196,7 +196,8 @@ export default {
       leftIndex: "-1",
       isFirst: true,
       maxMenuDataLength: "6",
-      logosrc: "@/assets/logo.png"
+      logosrc:
+        "https://standard.mingmenhui.com/upload/header/4dc631d9d53547d99174b7cd95d6992a..png"
     };
   },
   components: {
@@ -236,8 +237,7 @@ export default {
       this.caculatorDialog = true;
     },
     getMenu() {
-      this.$http("/api/GetAuthorizedMenu").then(res => {
-        // console.log(res);
+      this.$http("Api/Authority/GetAuthorizedMenu").then(res => {
         if (res.data.Result === 403) {
           this.$router.push("/login");
         }
@@ -246,7 +246,7 @@ export default {
             名称: it.模块名称,
             图标: it.图标路径,
             层级: it.层级,
-            布局: it.菜单显示 ? "layoutMenu" : "",
+            布局: it.菜单显示 ? "Main" : "",
             路径: it.请求url
           };
         });
@@ -262,7 +262,7 @@ export default {
             item.路径 = "/" + item.布局 + item.路径;
           }
 
-          // 使存在路径 但布局不为layoutMenu项不显示在菜单中
+          // 使存在路径 但布局不为MainLayout项不显示在菜单中
           if (!(item.路径 && item.布局 === "")) {
             data.push(item);
           }
@@ -275,7 +275,7 @@ export default {
         });
         this.allPath = allPath;
         this.menuData = data;
-        if (this.activeRouter === "/layoutMenu")
+        if (this.activeRouter === "/Main")
           this.$router.push(this.allPath[0].路径);
         this.$nextTick(() => {
           this.findNode();
@@ -390,11 +390,11 @@ export default {
     },
     changeSelectColor() {
       this.$nextTick(() => {
-        $(".layoutMenu .el-submenu .el-menu-item").css(
+        $(".MainLayout .el-submenu .el-menu-item").css(
           "backgroundColor",
           "#f5f5f5"
         );
-        $(".layoutMenu .el-submenu.is-opened .el-menu-item.is-active")
+        $(".MainLayout .el-submenu.is-opened .el-menu-item.is-active")
           .parent()
           .children(".el-menu-item")
           .css("backgroundColor", "#eee");
@@ -427,31 +427,16 @@ export default {
 <style lang="scss">
 $backcolor: #eee;
 $backcolor1: #f5f5f5;
-$activecolor: #4285f4;
+$activecolor: #008cba;
 $top-activecolor: #ffffff;
 $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-.qq-help {
-  cursor: pointer;
-  position: absolute;
-  right: 0px;
-  bottom: 45%;
-  background: #5c708d;
-  width: 20px;
-  height: 100px;
-  color: white;
-  text-align: center;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  z-index: 999;
-}
-
 $top-background: linear-gradient(
   180deg,
-  #41546f,
-  #41546f 0,
-  #3b4c65 100%,
-  #3b4c65 0
+  #008cba,
+  #008cba 0,
+  #008cba 100%,
+  #008cba 0
 );
 
 .layout {
@@ -652,7 +637,7 @@ $top-background: linear-gradient(
       padding: 0px 20px 30px !important;
     }
   }
-  .layoutMenu {
+  .MainLayout {
     border: none;
     .el-submenu {
       background-color: $backcolor1;
@@ -791,7 +776,7 @@ $top-background: linear-gradient(
       width: 50% !important;
       .el-scrollbar {
         width: 50% !important;
-        .layoutMenu {
+        .MainLayout {
           .el-submenu {
             .el-submenu__title,
             .el-submenu__title span {

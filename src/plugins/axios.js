@@ -26,7 +26,7 @@ axios.interceptors.response.use(response => {
     // 对响应错误做点什么
     if (error.response.status === 403) {
         //router.push("/login")
-        if (location.hash.substr(1) == "/login" || location.hash.substr(1) == "/jump" || location.hash.substr(1) == "/layoutMenu") return;
+        if (location.hash.substr(1) == "/login" || location.hash.substr(1) == "/jump" || location.hash.substr(1) == "/MainLayout") return;
         MessageBox.confirm('登陆过期或无权限操作，是否尝试重新登陆?', '提示', {
             confirmButtonText: '确定',
             cancelButtonText: '取消',

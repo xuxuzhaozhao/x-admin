@@ -1,6 +1,6 @@
 <template>
   <el-progress 
-    class="layoutMenu-top-progress"
+    class="MainLayout-top-progress"
     v-if="false"
     :percentage="percentage"
     :stroke-width="2"
@@ -47,7 +47,7 @@ export default {
 };
 </script>
 <style>
-.layout .layoutMenu-top-progress.el-progress {
+.layout .MainLayout-top-progress.el-progress {
   position: fixed;
   top: 0;
   z-index: 201;

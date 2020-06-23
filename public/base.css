@@ -35,3 +35,7 @@
 .el-message .el-icon-info {
     color: #dbefdc !important
 }
+
+body{
+    margin: 0;
+}

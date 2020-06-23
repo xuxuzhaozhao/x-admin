@@ -52,7 +52,7 @@ export default {
 };
 </script>
 <style>
-.layoutMenu .el-submenu__title i {
+.MainLayout .el-submenu__title i {
   vertical-align: middle;
   margin-right: 5px;
   width: 15px;
@@ -61,14 +61,14 @@ export default {
   transform: scale(0.8);
 }
 
-.layoutMenu .el-submenu.is-opened > .el-submenu__title .el-submenu__icon-arrow {
+.MainLayout .el-submenu.is-opened > .el-submenu__title .el-submenu__icon-arrow {
   transform: rotateZ(180deg) scale(0.8);
 }
 
-.layoutMenu.isCollapse .el-submenu__title .el-submenu__icon-arrow {
+.MainLayout.isCollapse .el-submenu__title .el-submenu__icon-arrow {
   display: none;
 }
-.layoutMenu .el-submenu__icon-arrow {
+.MainLayout .el-submenu__icon-arrow {
   right: 10px;
 }
 </style>

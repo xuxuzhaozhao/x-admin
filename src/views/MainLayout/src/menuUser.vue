@@ -58,11 +58,12 @@ export default {
   },
   computed: {
     header() {
-      return this.$store.state.user.qiye.头像;
+      return "https://standard.mingmenhui.com/upload/header/4dc631d9d53547d99174b7cd95d6992a..png";
+      //return this.$store.state.user.qiye.头像;
     }
   },
   created() {
-    this.getUserInfo();
+    //this.getUserInfo();
   },
   methods: {
     getCookie(name) {
